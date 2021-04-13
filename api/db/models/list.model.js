@@ -7,8 +7,15 @@ const ListSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
+    demo: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+
     // with auth
-    _userId: {
+     _userId: {
         type: mongoose.Types.ObjectId,
         required: true
     }

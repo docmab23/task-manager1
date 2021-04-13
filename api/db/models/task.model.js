@@ -7,6 +7,30 @@ const TaskSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
+    sub_project:{
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    tow:{
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    hours:{
+        type: Number,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    detail:{
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
     _listId: {
         type: mongoose.Types.ObjectId,
         required: true

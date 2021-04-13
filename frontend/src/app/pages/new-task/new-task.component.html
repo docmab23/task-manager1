@@ -4,11 +4,19 @@
       Create a new task
     </h1>
 
-    <input #taskTitleInput class="input has-background-light is-medium" type="text" placeholder="Enter task name...">
+    <input #taskTitleInput class="input has-background-light is-medium" type="date" placeholder="Enter Project Title">
+    <br><br>
+    <input #subProjectInput class="input has-background-light is-medium" type="text" placeholder="Enter Subproject name...">
+    <br><br>
+    <input #TowInput class="input has-background-light is-medium" type="text" placeholder="Enter Type of Work">
+    <br><br>
+    <input #HoursInput class="input has-background-light is-medium" type="number" placeholder="Enter No. of Hours Worked">
+    <br><br>
+    <input #DetailInput class="input has-background-light is-medium" type="text" placeholder="Enter any further detail">
     <br><br>
     <div class="buttons is-right">
       <button class="button is-medium" routerLink="/">Cancel</button>
-      <button class="button is-primary has-text-white is-medium" (click)="createTask(taskTitleInput.value)">Create</button>
+      <button class="button is-primary has-text-white is-medium" (click)="createTask(taskTitleInput.value,subProjectInput.value,TowInput.value,HoursInput.value,DetailInput.value)">Create</button>
     </div>
 
     

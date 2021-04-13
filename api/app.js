@@ -117,7 +117,7 @@ let verifySession = (req, res, next) => {
 app.get('/lists', authenticate, (req, res) => {
     // We want to return an array of all the lists that belong to the authenticated user 
     List.find({
-        _userId: req.user_id
+        _userId: req.user_id,
     }).then((lists) => {
         res.send(lists);
     }).catch((e) => {
@@ -133,9 +133,11 @@ app.post('/lists', authenticate, (req, res) => {
     // We want to create a new list and return the new list document back to the user (which includes the id)
     // The list information (fields) will be passed in via the JSON request body
     let title = req.body.title;
-
+    let demo = req.body.demo;
+    console.log(demo);
     let newList = new List({
         title,
+        demo,
         _userId: req.user_id
     });
     newList.save().then((listDoc) => {
@@ -182,7 +184,7 @@ app.delete('/lists/:id', authenticate, (req, res) => {
 app.get('/lists/:listId/tasks', authenticate, (req, res) => {
     // We want to return all tasks that belong to a specific list (specified by listId)
     Task.find({
-        _listId: req.params.listId
+        _listId: req.params.listId,
     }).then((tasks) => {
         res.send(tasks);
     })
@@ -212,6 +214,10 @@ app.post('/lists/:listId/tasks', authenticate, (req, res) => {
         if (canCreateTask) {
             let newTask = new Task({
                 title: req.body.title,
+                sub_project: req.body.sub_project,
+                tow: req.body.tow,
+                hours: req.body.hours,
+                detail: req.body.detail,
                 _listId: req.params.listId
             });
             newTask.save().then((newTaskDoc) => {

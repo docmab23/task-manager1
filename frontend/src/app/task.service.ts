@@ -14,9 +14,9 @@ export class TaskService {
     return this.webReqService.get('lists');
   }
 
-  createList(title: string) {
+  createList(title: string, demo: string) {
     // We want to send a web request to create a list
-    return this.webReqService.post('lists', { title });
+    return this.webReqService.post('lists', { title,demo });
   }
 
   updateList(id: string, title: string) {
@@ -41,9 +41,9 @@ export class TaskService {
     return this.webReqService.get(`lists/${listId}/tasks`);
   }
 
-  createTask(title: string, listId: string) {
+  createTask(title: string,sub_project: string,tow: string,hours: number,detail: string, listId: string) {
     // We want to send a web request to create a task
-    return this.webReqService.post(`lists/${listId}/tasks`, { title });
+    return this.webReqService.post(`lists/${listId}/tasks`, { title,sub_project,tow,hours,detail });
   }
 
   complete(task: Task) {
