@@ -363,10 +363,11 @@ app.post('/users/login', (req, res) => {
         res.status(400).send(e);
     });
 })
-app.get('/users/logout',authebticate,function(req,res){
+app.get('/users/logout',authenticate,function(req,res){
         req.user.deleteToken(req.token,(err,user)=>{
             if(err) return res.status(400).send(err);
             res.sendStatus(200);
+            res.redirect("users/login");
         });
 
     }); 
