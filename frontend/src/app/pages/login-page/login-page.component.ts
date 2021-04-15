@@ -25,4 +25,9 @@ export class LoginPageComponent implements OnInit {
       
     });
   }
+<<<<<<< HEAD
  
+=======
+
+}
+>>>>>>> 4035603c9203d12eff83278ef7ce733e6c7665d6
