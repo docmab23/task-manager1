@@ -25,8 +25,5 @@ export class LoginPageComponent implements OnInit {
       
     });
   }
-  onLogoutButtonClicked(){
-    this.authService.logout();
-    this.router.navigate(['/users']);
 
 }
